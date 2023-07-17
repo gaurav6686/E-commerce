@@ -17,7 +17,7 @@ class Splash1 extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center, 
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
                 width: 120,
@@ -41,7 +41,6 @@ class Splash1 extends StatelessWidget {
   }
 }
 
-
 class Splash2 extends StatefulWidget {
   const Splash2({super.key});
 
@@ -50,8 +49,7 @@ class Splash2 extends StatefulWidget {
 }
 
 class _Splash2State extends State<Splash2> {
-
-@override
+  @override
   void initState() {
     super.initState();
     Timer(const Duration(seconds: 2), () {
@@ -61,7 +59,6 @@ class _Splash2State extends State<Splash2> {
       );
     });
   }
-
 
   @override
   Widget build(BuildContext context) {

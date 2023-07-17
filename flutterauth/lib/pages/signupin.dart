@@ -15,10 +15,11 @@ class SignInUp extends StatefulWidget {
 class _SignInUpState extends State<SignInUp> {
   String? errorMessage = '';
   bool isLogin = true;
-
+  // email & password controller
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
 
+  // signin Methode
   Future<void> signIn() async {
     try {
       await Auth().signIn(
@@ -33,7 +34,7 @@ class _SignInUpState extends State<SignInUp> {
             actions: [
               TextButton(
                 onPressed: () {
-                  Navigator.pop(context); 
+                  Navigator.pop(context);
                 },
                 child: const Text('OK'),
               ),
@@ -44,6 +45,7 @@ class _SignInUpState extends State<SignInUp> {
     }
   }
 
+  // signup Methode
   Future<void> signUp() async {
     try {
       await Auth().signUp(
@@ -58,7 +60,7 @@ class _SignInUpState extends State<SignInUp> {
             actions: [
               TextButton(
                 onPressed: () {
-                  Navigator.pop(context); 
+                  Navigator.pop(context);
                 },
                 child: const Text('OK'),
               ),
@@ -69,6 +71,7 @@ class _SignInUpState extends State<SignInUp> {
     }
   }
 
+// Input methode
   Widget _entryField(
     String title,
     TextEditingController controller,
@@ -90,26 +93,12 @@ class _SignInUpState extends State<SignInUp> {
     );
   }
 
+  // handle error
   Widget _errorMessage() {
     return Text(errorMessage == '' ? '' : 'Humm ? $errorMessage');
   }
 
-  // Widget _submitButton() {
-  //   return Container(
-  //     width: double.infinity,
-  //     height: 50,
-  //     child: ElevatedButton(
-  //       onPressed: isLogin ? signIn : signUp,
-  //       style: ElevatedButton.styleFrom(
-  //         primary: const Color(0xFF6318AF), // Set purple color
-  //         shape: RoundedRectangleBorder(
-  //           borderRadius: BorderRadius.circular(8.0),
-  //         ),
-  //       ),
-  //       child: Text(isLogin ? 'Login' : 'Register'),
-  //     ),
-  //   );
-  // }
+  // Submit button
   Widget _submitButton() {
     return Container(
       width: double.infinity,
@@ -122,7 +111,7 @@ class _SignInUpState extends State<SignInUp> {
           );
         },
         style: ElevatedButton.styleFrom(
-          primary: const Color(0xFF6318AF), 
+          primary: const Color(0xFF6318AF),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(8.0),
           ),
@@ -132,6 +121,7 @@ class _SignInUpState extends State<SignInUp> {
     );
   }
 
+//  change the login to register (viceversa)
   Widget _LoginOrregisterButton() {
     return TextButton(
       onPressed: () {
@@ -174,7 +164,7 @@ class _SignInUpState extends State<SignInUp> {
                               ),
                             ),
                           ),
-                           SizedBox(
+                          SizedBox(
                             height: 20.fh,
                           ),
                           Text(
@@ -222,7 +212,9 @@ class _SignInUpState extends State<SignInUp> {
                     children: [
                       Text(
                         'By continuing, you agree to our',
-                        style: TextStyle(fontSize: MediaQuery.of(context).size.width * 0.042, color: Colors.black45),
+                        style: TextStyle(
+                            fontSize: MediaQuery.of(context).size.width * 0.042,
+                            color: Colors.black45),
                       ),
                       SizedBox(
                         height: 5.fh,
@@ -234,7 +226,8 @@ class _SignInUpState extends State<SignInUp> {
                               child: Text(
                                 'Terms of Service',
                                 style: TextStyle(
-                                  fontSize: MediaQuery.of(context).size.width * 0.042,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.042,
                                   color: Colors.black45,
                                   decoration: TextDecoration.underline,
                                 ),
@@ -244,7 +237,8 @@ class _SignInUpState extends State<SignInUp> {
                             TextSpan(
                               text: '  ',
                               style: TextStyle(
-                                fontSize: MediaQuery.of(context).size.width * 0.042,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.042,
                                 color: Colors.black45,
                               ),
                             ),
@@ -252,7 +246,8 @@ class _SignInUpState extends State<SignInUp> {
                               child: Text(
                                 'Privacy Policy',
                                 style: TextStyle(
-                                  fontSize: MediaQuery.of(context).size.width * 0.042,
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.042,
                                   color: Colors.black45,
                                   decoration: TextDecoration.underline,
                                 ),

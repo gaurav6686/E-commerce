@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// screenconfig class for media query
 class SizeConfig {
   static const double assumedScreenHeight = 747.0;
   static const double assumedScreenWidth = 375.0;

@@ -19,6 +19,7 @@ class homePage extends StatelessWidget {
     return Text(user?.email ?? 'User email');
   }
 
+  // Signin Button
   Widget _signOutButton() {
     return ElevatedButton(
       onPressed: signOut,
@@ -42,7 +43,7 @@ class homePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             _userId(),
-          _signOutButton(),
+            _signOutButton(),
           ],
         ),
       ),

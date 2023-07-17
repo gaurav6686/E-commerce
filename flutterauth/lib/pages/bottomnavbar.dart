@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterauth/pages/HomePage.dart';
 
 import 'home.dart';
+
 class BottomNavBar extends StatefulWidget {
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
@@ -10,6 +11,7 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
   int _currentIndex = 0;
 
+  //BottomNavigator Screens
   final List<Widget> _pages = [
     HomePage(),
     WishlistScreen(),
@@ -17,7 +19,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     homePage(),
   ];
 
- @override
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _pages[_currentIndex],
@@ -52,7 +54,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           children: [
             Icon(
               icon,
-              color: _currentIndex == index ? Colors.purple :Colors.black,
+              color: _currentIndex == index ? Colors.purple : Colors.black,
             ),
             SizedBox(height: 4),
             Text(
@@ -68,6 +70,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   }
 }
 
+// orderscreen
 class OrderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -81,6 +84,8 @@ class OrderScreen extends StatelessWidget {
     );
   }
 }
+
+// wishlistScreen
 class WishlistScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

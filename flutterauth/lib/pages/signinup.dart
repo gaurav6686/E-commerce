@@ -13,9 +13,12 @@ class _LoginPageState extends State<LoginPage> {
   String? errorMessage = '';
   bool isLogin = true;
 
+  // email & password controller
   final TextEditingController _controllerEmail = TextEditingController();
   final TextEditingController _controllerPassword = TextEditingController();
 
+
+  // signin Methode
   Future<void> signIn() async {
     try {
       await Auth().signIn(
@@ -26,7 +29,7 @@ class _LoginPageState extends State<LoginPage> {
       });
     }
   }
-
+  // signup Methode
   Future<void> signUp() async {
     try {
       await Auth().signUp(
@@ -41,7 +44,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget _title() {
     return Text('fireBase Auth');
   }
-
+  // Input methode
   Widget _entryField(
     String title,
     TextEditingController controller,
@@ -53,18 +56,18 @@ class _LoginPageState extends State<LoginPage> {
       ),
     );
   }
-
+  // handle error
   Widget _errorMessage() {
     return Text(errorMessage == '' ? '' : 'Humm ? $errorMessage');
   }
-
+  // Submit button
   Widget _submitButton() {
     return ElevatedButton(
       onPressed: isLogin ? signIn : signUp,
       child: Text(isLogin ? 'Login' : 'Register'),
     );
   }
-
+//  change the login to register (viceversa)
   Widget _LoginOrregisterButton() {
     return TextButton(
       onPressed: () {
